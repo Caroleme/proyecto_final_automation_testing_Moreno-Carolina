@@ -26,39 +26,6 @@ El stack tecnológico seleccionado es el siguiente:
 
 El repositorio está organizado de forma modular aplicando el patrón Page Object Model (POM):
 
-Proyecto_Final_AutomatizacionQA/
-
-├── data/
-│   ├── products.json        # Datos de productos para pruebas
-│   └── users.csv            # Datos parametrizados de usuarios para login
-│
-├── logs                     # Archivos de registro (logs) de ejecución del framework
-│
-├── pages/
-│   ├── cart_page.py         # Page Object para la vista del carrito de compras     
-│   ├── inventory_page.py    # Page Object para la vista de inventario
-│   └── login_page.py        # Page Object para la vista de inicio de sesión
-│
-├── reports/
-│   └── reporte.html         # Reportes HTML generados por Pytest
-│   └── screenshots          # Capturas de pantalla de evidencias ante fallos
-│
-├── test/
-│   ├── test_api.py          # Pruebas de API REST (ReqRes)
-│   ├── test_car.py          # Pruebas del carrito de compras
-│   ├── test_inventory.py    # Pruebas de UI del inventario
-│   └── test_login.py        # Pruebas parametrizadas de inicio de sesión
-│
-├── util/
-│   ├── logger.py            # Configuración de logs del framework
-│   └── reader.py            # Lectores de archivos CSV y JSON
-│
-├── conftest.py              # Fixtures globales de Pytest (driver, login)
-├── guia.md
-├── pytest.ini               # Configuración general de Pytest
-└── requirements.txt         # Dependencias del proyecto
-
-
 ## Instalacion dependencias
 
 `pip install -r requirements.txt`
