@@ -1,0 +1,21 @@
+[
+  "test/test_api.py::test_crear_usuario",
+  "test/test_api.py::test_eliminar_usuario",
+  "test/test_api.py::test_obtener_usuario",
+  "test/test_api.py::test_usuario_no_encontrado",
+  "test/test_car.py::test_cart",
+  "test/test_inventory.py::test_inventory",
+  "test/test_inventory.py::test_inventory_title",
+  "test/test_inventory.py::test_productos_visibles",
+  "test/test_inventory.py::test_ui_carrito",
+  "test/test_inventory.py::test_ui_filtro",
+  "test/test_inventory.py::test_ui_menu",
+  "test/test_login.py::test_login[data0]",
+  "test/test_login.py::test_login[data1]",
+  "test/test_login.py::test_login[data2]",
+  "test/test_login.py::test_login_campo_contraseña_vacia",
+  "test/test_login.py::test_login_campos_vacios",
+  "test/test_login.py::test_login_usuario_bloqueado",
+  "test/test_login.py::test_usuario_bloqueado",
+  "test/test_login.py::test_usuario_campos_vacios"
+]

@@ -1,0 +1,6 @@
+# Caché y bytecode de Python
+__pycache__/
+*.py[cod]
+*$py.class
+# Caché de pytest
+.pytest_cache/
