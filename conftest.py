@@ -1,9 +1,9 @@
+import os
 import pytest
 from selenium import webdriver
 import pytest_html
 import pathlib
 import base64
-
 
 from pages.login_page import LoginPage
 
@@ -11,6 +11,13 @@ from pages.login_page import LoginPage
 def driver():
     options = webdriver.ChromeOptions()
     options.add_argument("--incognito")
+    
+    # Si se ejecuta en GitHub Actions (CI), activamos el modo headless y flags de Linux
+    if os.getenv("CI"):
+        options.add_argument("--headless")
+        options.add_argument("--no-sandbox")
+        options.add_argument("--disable-dev-shm-usage")
+        
     driver = webdriver.Chrome(options=options)
     driver.implicitly_wait(10)
     yield driver
@@ -45,9 +52,10 @@ def pytest_runtest_makereport(item, call):
         carpeta.mkdir(parents=True, exist_ok=True)
         archivo = carpeta / f"{item.name}.png"
 
-        driver.save_screenshot(str(archivo))
+        if driver:
+            driver.save_screenshot(str(archivo))
 
-        imagen = base64.b64encode(archivo.read_bytes()).decode("utf-8")
-        report.extras = [
-            pytest_html.extras.png(imagen, name="Screenshot")
-        ]
+            imagen = base64.b64encode(archivo.read_bytes()).decode("utf-8")
+            report.extras = [
+                pytest_html.extras.png(imagen, name="Screenshot")
+            ]
