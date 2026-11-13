@@ -1,35 +1,32 @@
 name: Test automatizados
 
-  on:
-    push:
-      branches:
-        - main
+on:
+  push:
+    branches:
+      - main
 
+jobs:
+  runs-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
 
-  jobs:
-    runs test:
-      runs on: ubuntu-latest
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
 
-
-      steps:
-        - name: descargar repositorio
-          uses:actions/checkout@v4
-
-        - name: configurar python
-          uses: actions/setup-python@v5
-          with:
-          python-version: "3.14.6"
-
-        - name: Instalar dependencias
-          run:|
+      - name: Instalar dependencias
+        run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-        - name: Ejecutar pruebas
-          run: pytest
+      - name: Ejecutar pruebas
+        run: pytest --html=reports/reporte.html --self-contained-html
 
-        - name: Guardar reporte como artefacto
-          uses: actions/upload-artefact@v4
-          with:
-            name: reporte-pytest-html
-            path: report.html 
+      - name: Guardar reporte como artefacto
+        uses: actions/upload-artifact@v4
+        with:
+          name: reporte-pytest-html
+          path: reports/reporte.html
