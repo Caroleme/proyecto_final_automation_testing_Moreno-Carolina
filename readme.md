@@ -26,6 +26,23 @@ El stack tecnológico seleccionado es el siguiente:
 
 El repositorio está organizado de forma modular aplicando el patrón Page Object Model (POM):
 
+```text
+proyecto_final_automation_testing_Moreno-Carolina/
+├── .github/
+│   └── workflows/
+│       └── test.yml
+├── data/
+├── logs/
+├── pages/
+├── reports/
+├── test/
+├── util/
+├── conftest.py
+├── guia.md
+├── pytest.ini
+├── readme.md
+└── requirements.txt```
+
 ## Instalacion dependencias
 
 `pip install -r requirements.txt`
