@@ -26,7 +26,7 @@ jobs:
         run: pytest --html=reports/reporte.html --self-contained-html
 
       - name: Guardar reporte como artefacto
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: reporte-pytest-html
           path: reports/reporte.html
